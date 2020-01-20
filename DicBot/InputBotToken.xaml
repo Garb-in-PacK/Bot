@@ -1,0 +1,10 @@
+﻿<Window x:Class="DicBot.InputBotToken"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="InputBotToken" Height="106" Width="300">
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Center" Text="Enter TelegramBot Token" />
+        <TextBox x:Name="ResponseTextBox" />
+        <Button Content="OK" Click="OKButton_Click" />
+    </StackPanel>
+</Window>

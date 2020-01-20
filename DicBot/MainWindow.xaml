@@ -1,0 +1,35 @@
+﻿<Window x:Name="Wins" x:Class="DicBot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         mc:Ignorable="d"
+         xmlns:local="clr-namespace:DicBot"
+        Title="MainWindow" Height="211.194" Width="533.955">
+    <Window.Resources>
+        <local:StringRes x:Key="Res" CountFollower="NULL" Log="Включите бота" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition Width="54*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="56*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="1" Grid.Row="0" Content="Запуск бота" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Click="StartBot" />
+        <TextBox  Grid.Column="0" Grid.Row="0" x:Name="Textbox" HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch" TextChanged="Textbox_TextChanged" Grid.RowSpan="2"/>
+        <Button  Grid.Column="0" Grid.Row="2" Content="Отправить всем подписчикам" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch"  Click="SendMessage"/>
+
+
+        <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" Text="Подписчиков:" VerticalAlignment="Stretch" />
+        <TextBlock Grid.Column="3" Grid.Row="0" x:Name="Followers" HorizontalAlignment="Stretch" Margin="0" TextWrapping="Wrap" Text="{Binding Source={StaticResource Res}, Path=CountFollower, IsAsync=True}" VerticalAlignment="Stretch" />
+        <TextBox Grid.Column="0" Grid.Row="3" SelectionBrush="Transparent" Cursor="Arrow" IsReadOnly="True"  VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"  Margin="0" TextWrapping="Wrap" Text="{Binding Source={StaticResource Res}, Path=Log, IsAsync=True}" VerticalAlignment="Stretch" />
+
+    </Grid>
+</Window>
